@@ -1,0 +1,16 @@
+.portfolioBlock{
+    background-color: yellowgreen;
+    min-height: 100vh;
+}
+.portfolioContainer{
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 1px solid;
+    width: 100%;
+}
