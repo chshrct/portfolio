@@ -1,6 +1,6 @@
 import React from "react";
-import s from "./Contacts.module.css";
-import cs from "../../common/styles/Container.module.css";
+import s from "./Contacts.module.scss";
+import cs from "../../common/styles/Container.module.scss";
 
 const Contacts = () => {
   return (

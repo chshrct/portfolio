@@ -1,6 +1,6 @@
 import React from "react";
-import s from "./Main.module.css";
-import cs from "../../common/styles/Container.module.css"
+import s from "./Main.module.scss";
+import cs from "../../common/styles/Container.module.scss";
 const Main = () => {
   return (
     <div className={s.mainBlock}>

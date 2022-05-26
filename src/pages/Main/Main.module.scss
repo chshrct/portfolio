@@ -1,0 +1,22 @@
+@import "../../common/styles/sass/variables.scss";
+.mainBlock {
+  min-height: 100vh;
+  background-color: $mainBg;
+
+  .mainContainer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .greeting {
+      width: 300px;
+      background-color: bisque;
+    }
+
+    .photo {
+      width: 300px;
+      height: 400px;
+      background-color: bisque;
+    }
+  }
+}

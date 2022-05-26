@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../Nav/Nav";
-import s from "./Header.module.css";
+import Nav from "./Nav/Nav";
+import s from "./Header.module.scss";
 
 const Header = () => {
   return (
