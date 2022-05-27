@@ -1,7 +1,28 @@
+@import "../../styles/sass/variables.scss";
+@import "../../styles/sass/mixins.scss";
 .header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  position: fixed;
   height: 80px;
-  background-color: aqua;
+  width: 100%;
+  background-color: $secondaryBg;
+  .headerContainer {
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    .navContainer {
+      display: none;
+      @media screen and (min-width: 1200px) {
+        display: flex;
+      }
+      .phoneContainer {
+        display: flex;
+        align-items: center;
+        padding-left: 45px;
+        .phoneNumber {
+          @include fontInterSettings(16px, 400, 1.6em, $accentColor);
+          padding-left: 15px;
+        }
+      }
+    }
+  }
 }

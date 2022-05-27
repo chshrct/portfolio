@@ -1,6 +1,33 @@
-.nav{
-    display:flex;
-    justify-content: space-between;
-    width: 300px;
-    border: 1px solid;
+@import "../../../styles/sass/mixins.scss";
+.nav {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  &:after {
+    content: "";
+    position: absolute;
+    height: 11px;
+    width: 1px;
+    background: $mainColor;
+    right: 0px;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      margin-right: 40px;
+      &:last-child {
+        margin-right: 45px;
+      }
+      a {
+        @include fontInterSettings(16px, 400, 1.6em, $mainColor);
+        text-decoration: none;
+        background-color: transparent;
+      }
+    }
+  }
 }
