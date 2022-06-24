@@ -1,5 +1,5 @@
-@import "../../common/styles/sass/variables.scss";
-@import "../../common/styles/sass/mixins.scss";
+@import '../../common/styles/sass/variables.scss';
+@import '../../common/styles/sass/mixins.scss';
 .mainBlock {
   position: relative;
   .mainContainer {
@@ -31,7 +31,53 @@
     bottom: 0;
     height: 100%;
     width: 45%;
-    background-image: url("../../assets/images/mainPhoto.jpg");
+    background-image: url('../../assets/images/mainPhoto.png');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .socialGroup {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      width: 400px;
+      height: 80px;
+      background-color: $thirdyBg;
+      bottom: 30px;
+      left: -400px;
+      padding-left: 12px;
+
+      border: 1px solid $borderColor;
+      border-right: 0;
+      border-radius: 50px 0 0 50px;
+      .socialLink {
+        display: flex;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+          @include fontInterSettings(16px, 400, 1.6em, $mainColor);
+          text-decoration: none;
+          border-radius: 50px;
+          background-color: $secondaryBg;
+          border: 0.5px solid $secondaryBorderColor;
+          overflow: hidden;
+          margin-right: 20px;
+          padding: 9px;
+          height: 52px;
+          max-width: 50px;
+          transition: all 0.4s;
+          &.active {
+            max-width: 500px;
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            -ms-transition-delay: 0s;
+            -o-transition-delay: 0s;
+            transition-delay: 0s;
+          }
+        }
+      }
+    }
   }
 }

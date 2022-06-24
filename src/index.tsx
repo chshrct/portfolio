@@ -1,10 +1,11 @@
-import "normalize.css";
-import { createRoot } from "react-dom/client";
-import "./index.scss";
-import App from "./App/App";
-import reportWebVitals from "./reportWebVitals";
+import 'normalize.css';
+import { createRoot } from 'react-dom/client';
 
-const container = document.getElementById("root");
+import './index.scss';
+import App from './App/App';
+import reportWebVitals from './reportWebVitals';
+
+const container = document.getElementById('root');
 const root = createRoot(container!); // createRoot(container!) if you use TypeScript
 root.render(<App />);
 

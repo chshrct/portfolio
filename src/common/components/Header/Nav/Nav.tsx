@@ -1,7 +1,8 @@
-import React from "react";
-import s from "./Nav.module.scss";
+import React, { FC } from 'react';
 
-const Nav = () => {
+import s from './Nav.module.scss';
+
+const Nav: FC = () => {
   return (
     <div className={s.nav}>
       <ul>

@@ -1,5 +1,6 @@
-import React, { FC } from "react";
-import s from "./Skill.module.scss";
+import React, { FC } from 'react';
+
+import s from './Skill.module.scss';
 
 type PropsType = {
   title: string;
@@ -9,7 +10,7 @@ type PropsType = {
 const Skill: FC<PropsType> = ({ title, description }) => {
   return (
     <div className={s.skill}>
-      <div className={s.icon}></div>
+      <div className={s.icon} />
       <h3 className={s.title}>{title}</h3>
       <span className={s.description}>{description}</span>
     </div>

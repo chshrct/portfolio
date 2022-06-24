@@ -1,5 +1,6 @@
-import React, { FC } from "react";
-import s from "./Project.module.scss";
+import React, { FC } from 'react';
+
+import s from './Project.module.scss';
 
 type PropsType = {
   title: string;
