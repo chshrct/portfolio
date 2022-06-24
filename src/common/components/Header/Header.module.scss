@@ -2,6 +2,7 @@
 @import "../../styles/sass/mixins.scss";
 .header {
   position: fixed;
+  z-index: 2;
   height: 80px;
   width: 100%;
   background-color: $secondaryBg;

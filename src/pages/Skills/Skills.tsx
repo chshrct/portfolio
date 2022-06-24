@@ -1,11 +1,13 @@
-import React from "react";
-import s from "./Skills.module.scss";
-import cs from "../../common/styles/Container.module.scss";
-import Skill from "./Skill/Skill";
+import { FC } from 'react';
 
-const Skills = () => {
+import cs from '../../common/styles/Container.module.scss';
+
+import Skill from './Skill/Skill';
+import s from './Skills.module.scss';
+
+const Skills: FC = () => {
   return (
-    <div className={s.skillsBlock}>
+    <section className={s.skillsBlock}>
       <div className={`${cs.container} ${s.skillsContainer}`}>
         <h2 className={s.title}>Skills</h2>
         <div className={s.skills}>
@@ -22,7 +24,7 @@ const Skills = () => {
           <Skill title="Redux" description="voluptates dolorem mollitia." />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,11 +1,13 @@
-import React from "react";
-import s from "./Portfolio.module.scss";
-import cs from "../../common/styles/Container.module.scss";
-import Project from "./Project/Project";
+import { FC } from 'react';
 
-const Portfolio = () => {
+import cs from '../../common/styles/Container.module.scss';
+
+import s from './Portfolio.module.scss';
+import Project from './Project/Project';
+
+const Portfolio: FC = () => {
   return (
-    <div className={s.portfolioBlock}>
+    <section className={s.portfolioBlock}>
       <div className={`${cs.container} ${s.portfolioContainer}`}>
         <h2>Portfolio</h2>
         <div className={s.projects}>
@@ -24,7 +26,7 @@ especially : a device or process for indicating a number or amount a counter tha
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -11,7 +11,7 @@ const Header = () => {
           <Nav />
           <div className={s.phoneContainer}>
             <Phone width={15} height={15} title={"phone"} />
-            <div className={s.phoneNumber}>+595126653</div>
+            <div className={s.phoneNumber}>+995 595126653</div>
           </div>
         </div>
       </div>

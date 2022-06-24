@@ -1,26 +1,22 @@
-import React from "react";
-import s from "./Contacts.module.scss";
-import cs from "../../common/styles/Container.module.scss";
+import React, { FC } from 'react';
 
-const Contacts = () => {
+import cs from '../../common/styles/Container.module.scss';
+
+import s from './Contacts.module.scss';
+
+const Contacts: FC = () => {
   return (
-    <div className={s.contactsBlock}>
+    <section className={s.contactsBlock}>
       <div className={`${cs.container} ${s.contactsContainer}`}>
         <h2>Contacts</h2>
         <form action="" className={s.form}>
           <input type="text" className={s.input} />
           <input type="text" className={s.input} />
-          <textarea
-            className={s.textarea}
-            name=""
-            id=""
-            cols={30}
-            rows={10}
-          ></textarea>
+          <textarea className={s.textarea} name="" id="" cols={30} rows={10} />
           <button type="submit">Send</button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,21 +1,37 @@
 @import "../../common/styles/sass/variables.scss";
+@import "../../common/styles/sass/mixins.scss";
 .mainBlock {
-  min-height: 100vh;
-
+  position: relative;
   .mainContainer {
+    min-height: 100vh;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 
     .greeting {
-      width: 300px;
-      background-color: bisque;
+      width: 55%;
+      h3 {
+        margin: 0 0 10px 0;
+        @include fontInterSettings(30px, 300, 1.2em, $accentColor);
+      }
+      h1 {
+        margin: 0 0 24px 0;
+        @include fontInterSettings(120px, 700, 1, $mainColor);
+      }
+      h2 {
+        margin: 0 0 41px 0;
+        @include fontInterSettings(36px, 300, 1.2em, $secondaryColor);
+      }
     }
-
-    .photo {
-      width: 300px;
-      height: 400px;
-      background-color: bisque;
-    }
+  }
+  .photo {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 45%;
+    background-image: url("../../assets/images/mainPhoto.jpg");
+    background-size: cover;
   }
 }
