@@ -7,7 +7,7 @@ import Project from './Project/Project';
 
 const Portfolio: FC = () => {
   return (
-    <section className={s.portfolioBlock}>
+    <section id="PROJECTS" className={s.portfolioBlock}>
       <div className={`${cs.container} ${s.portfolioContainer}`}>
         <h2>Portfolio</h2>
         <div className={s.projects}>

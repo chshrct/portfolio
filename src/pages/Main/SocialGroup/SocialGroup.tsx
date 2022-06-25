@@ -6,7 +6,7 @@ import s from './SocialGroup.module.scss';
 
 import { SocialLink } from 'common/components/SocialLink/SocialLink';
 
-const Links = [
+const SOCIAL_LINKS = [
   {
     title: 'LinkedIn',
     icon: faLinkedin,
@@ -27,7 +27,7 @@ const Links = [
 const FIRST = 0;
 
 export const SocialGroup: FC = () => {
-  const [active, setActive] = useState<string>(Links[FIRST].title);
+  const [active, setActive] = useState<string>(SOCIAL_LINKS[FIRST].title);
 
   const setActiveHandle = (title: string): void => {
     setActive(title);
@@ -35,7 +35,7 @@ export const SocialGroup: FC = () => {
   return (
     <div className={s.socialGroup}>
       <div className={s.socialLink}>
-        {Links.map(link => (
+        {SOCIAL_LINKS.map(link => (
           <SocialLink
             key={useId()}
             title={link.title}

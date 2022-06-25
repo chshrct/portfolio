@@ -1,11 +1,12 @@
-@import "../../../styles/sass/mixins.scss";
+@import '../../../styles/sass/mixins.scss';
+@import '../../../styles/sass/variables.scss';
 .nav {
   display: flex;
   position: relative;
   justify-content: space-between;
   align-items: center;
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     height: 11px;
     width: 1px;
@@ -27,6 +28,10 @@
         @include fontInterSettings(16px, 400, 1.6em, $mainColor);
         text-decoration: none;
         background-color: transparent;
+        cursor: pointer;
+        &.active {
+          color: $accentColor;
+        }
       }
     }
   }

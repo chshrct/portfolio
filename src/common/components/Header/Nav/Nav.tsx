@@ -1,23 +1,22 @@
-import React, { FC } from 'react';
+import React, { FC, useId } from 'react';
+
+import { Link } from 'react-scroll';
 
 import s from './Nav.module.scss';
+
+const NAV_LINKS = ['HOME', 'SKILLS', 'PROJECTS', 'CONTACTS'];
 
 const Nav: FC = () => {
   return (
     <div className={s.nav}>
       <ul>
-        <li>
-          <a href="#s">HOME</a>
-        </li>
-        <li>
-          <a href="#s">SKILLS</a>
-        </li>
-        <li>
-          <a href="#s">PROJECTS</a>
-        </li>
-        <li>
-          <a href="#s">CONTACTS</a>
-        </li>
+        {NAV_LINKS.map(link => (
+          <li key={useId()}>
+            <Link activeClass={s.active} to={link} spy smooth offset={-80} duration={500}>
+              {link}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -9,7 +9,7 @@ import { Particle } from 'common/components/Particle/Particle';
 
 const Main: FC = () => {
   return (
-    <section className={s.mainBlock}>
+    <section id="HOME" className={s.mainBlock}>
       <Particle />
       <div className={`${cs.container} ${s.mainContainer}`}>
         <div className={s.greeting}>

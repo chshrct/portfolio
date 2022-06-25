@@ -7,7 +7,7 @@ import s from './Skills.module.scss';
 
 const Skills: FC = () => {
   return (
-    <section className={s.skillsBlock}>
+    <section id="SKILLS" className={s.skillsBlock}>
       <div className={`${cs.container} ${s.skillsContainer}`}>
         <h2 className={s.title}>Skills</h2>
         <div className={s.skills}>

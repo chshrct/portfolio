@@ -6,7 +6,7 @@ import s from './Contacts.module.scss';
 
 const Contacts: FC = () => {
   return (
-    <section className={s.contactsBlock}>
+    <section id="CONTACTS" className={s.contactsBlock}>
       <div className={`${cs.container} ${s.contactsContainer}`}>
         <h2>Contacts</h2>
         <form action="" className={s.form}>
