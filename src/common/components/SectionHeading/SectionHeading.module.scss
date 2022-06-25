@@ -1,0 +1,58 @@
+@import '../../styles/sass/mixins.scss';
+@import '../../styles/sass/variables.scss';
+
+.container {
+  text-align: center;
+  position: relative;
+  margin-top: -5px;
+  margin-bottom: 32px;
+  @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+  h4 {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fec544;
+    position: relative;
+    z-index: 10;
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0 0 10px 0;
+    text-align: center;
+    line-height: 1.2em;
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: #3f4551;
+      width: 170px;
+      height: 2px;
+      bottom: -16px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: #fec544;
+      width: 70px;
+      height: 2px;
+      bottom: -16px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+  h2 {
+    text-transform: uppercase;
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 90px;
+    font-weight: 700;
+    color: rgba(21, 27, 41, 0.5);
+    margin: 0;
+    line-height: 1.2em;
+    text-align: center;
+  }
+}

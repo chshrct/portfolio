@@ -5,11 +5,13 @@ import cs from '../../common/styles/Container.module.scss';
 import Skill from './Skill/Skill';
 import s from './Skills.module.scss';
 
+import { SectionHeading } from 'common/components/SectionHeading/SectionHeading';
+
 const Skills: FC = () => {
   return (
     <section id="SKILLS" className={s.skillsBlock}>
       <div className={`${cs.container} ${s.skillsContainer}`}>
-        <h2 className={s.title}>Skills</h2>
+        <SectionHeading title="SKILLS" />
         <div className={s.skills}>
           <Skill
             title="HTML"
