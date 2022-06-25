@@ -1,27 +1,42 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { FC, useState } from 'react';
+import React, { FC, useId, useState } from 'react';
 
 import { faTelegram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import cs from '../../common/styles/Container.module.scss';
 
 import s from './Main.module.scss';
 
 import { Particle } from 'common/components/Particle/Particle';
+import { SocialLink } from 'common/components/SocialLink/SocialLink';
 
-enum Links {
-  LINKEDIN,
-  GITHUB,
-  TELEGRAM,
-}
+const Links = [
+  {
+    title: 'LinkedIn',
+    icon: faLinkedin,
+    url: 'https://www.linkedin.com/in/eugene-kostroma-1078b7201/',
+  },
+  {
+    title: 'Github',
+    icon: faGithub,
+    url: 'https://github.com/chshrct',
+  },
+  {
+    title: 'Telegram',
+    icon: faTelegram,
+    url: 'https://t.me/chshrct',
+  },
+];
+
+const FIRST = 0;
 
 const Main: FC = () => {
-  const [active, setActive] = useState<number>(Links.LINKEDIN);
+  const [active, setActive] = useState<string>(Links[FIRST].title);
 
-  const setActiveClassName = (link: number): string => {
-    return active === link ? s.active : '';
+  const setActiveHandle = (title: string): void => {
+    setActive(title);
   };
+
   return (
     <section className={s.mainBlock}>
       <Particle />
@@ -34,36 +49,16 @@ const Main: FC = () => {
         <div className={s.photo}>
           <div className={s.socialGroup}>
             <div className={s.socialLink}>
-              <a
-                href="#sk"
-                className={setActiveClassName(Links.LINKEDIN)}
-                onMouseEnter={() => {
-                  setActive(Links.LINKEDIN);
-                }}
-              >
-                <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                LinkedIn
-              </a>
-              <a
-                href="#sk"
-                className={setActiveClassName(Links.GITHUB)}
-                onMouseEnter={() => {
-                  setActive(Links.GITHUB);
-                }}
-              >
-                <FontAwesomeIcon icon={faGithub} size="2x" />
-                Github
-              </a>
-              <a
-                href="#sk"
-                className={setActiveClassName(Links.TELEGRAM)}
-                onMouseEnter={() => {
-                  setActive(Links.TELEGRAM);
-                }}
-              >
-                <FontAwesomeIcon icon={faTelegram} size="2x" />
-                Telegram
-              </a>
+              {Links.map(link => (
+                <SocialLink
+                  key={useId()}
+                  title={link.title}
+                  icon={link.icon}
+                  setActiveHandle={setActiveHandle}
+                  active={active === link.title}
+                  url={link.url}
+                />
+              ))}
             </div>
           </div>
         </div>

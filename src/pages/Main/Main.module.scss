@@ -51,32 +51,6 @@
       border-radius: 50px 0 0 50px;
       .socialLink {
         display: flex;
-
-        a {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          gap: 10px;
-          @include fontInterSettings(16px, 400, 1.6em, $mainColor);
-          text-decoration: none;
-          border-radius: 50px;
-          background-color: $secondaryBg;
-          border: 0.5px solid $secondaryBorderColor;
-          overflow: hidden;
-          margin-right: 20px;
-          padding: 9px;
-          height: 52px;
-          max-width: 50px;
-          transition: all 0.4s;
-          &.active {
-            max-width: 500px;
-            -webkit-transition-delay: 0s;
-            -moz-transition-delay: 0s;
-            -ms-transition-delay: 0s;
-            -o-transition-delay: 0s;
-            transition-delay: 0s;
-          }
-        }
       }
     }
   }
