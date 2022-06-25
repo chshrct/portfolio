@@ -35,23 +35,5 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    .socialGroup {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      width: 400px;
-      height: 80px;
-      background-color: $thirdyBg;
-      bottom: 30px;
-      left: -400px;
-      padding-left: 12px;
-
-      border: 1px solid $borderColor;
-      border-right: 0;
-      border-radius: 50px 0 0 50px;
-      .socialLink {
-        display: flex;
-      }
-    }
   }
 }
