@@ -5,11 +5,15 @@ import cs from '../../common/styles/Container.module.scss';
 import s from './Portfolio.module.scss';
 import Project from './Project/Project';
 
-const Portfolio: FC = () => {
+import { SectionHeading } from 'common/components/SectionHeading/SectionHeading';
+
+const Projects: FC = () => {
   return (
     <section id="PROJECTS" className={s.portfolioBlock}>
       <div className={`${cs.container} ${s.portfolioContainer}`}>
-        <h2>Portfolio</h2>
+        <div style={{ height: '100px' }} />
+        <SectionHeading title="Projects" />
+        <div style={{ height: '25px' }} />
         <div className={s.projects}>
           <Project
             title="counter"
@@ -25,9 +29,10 @@ especially : a device or process for indicating a number or amount a counter tha
             description="a network of social interactions and personal relationships. a dedicated website or other application which enables users to communicate with each other by posting information, comments, messages, images, etc."
           />
         </div>
+        <div style={{ height: '100px' }} />
       </div>
     </section>
   );
 };
 
-export default Portfolio;
+export default Projects;

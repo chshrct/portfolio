@@ -1,5 +1,6 @@
+@import '../../common/styles/sass/variables.scss';
+
 .skillsBlock {
-  background-color: darkcyan;
   min-height: 100vh;
   .skillsContainer {
     flex-direction: column;
@@ -12,7 +13,6 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      border: 1px solid;
       width: 100%;
     }
   }

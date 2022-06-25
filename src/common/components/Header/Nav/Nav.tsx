@@ -12,7 +12,7 @@ const Nav: FC = () => {
       <ul>
         {NAV_LINKS.map(link => (
           <li key={useId()}>
-            <Link activeClass={s.active} to={link} spy smooth offset={-80} duration={500}>
+            <Link activeClass={s.active} to={link} spy smooth offset={-20} duration={500}>
               {link}
             </Link>
           </li>

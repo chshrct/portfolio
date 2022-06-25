@@ -1,15 +1,30 @@
-.skill{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 200px;
-    width: 250px;
-    background-color: lightcyan;
-    text-align: center;
-}
-.icon{
-    height: 60px;
-    width: 60px;
-    background-color: darkslategray;
+@import '../../../common/styles/sass/variables.scss';
+@import '../../../common/styles/sass/mixins.scss';
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 30px;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+  border: 1px solid $borderColor;
+  background-color: $thirdyBg;
+  width: 350px;
+  margin-bottom: 20px;
+  svg {
+    margin-bottom: 28px;
+    color: $secondaryColor;
+    animation-iteration-count: 1;
+  }
+  h2 {
+    padding: 0;
+    margin: 0 0 16px 0;
+    @include fontInterSettings(20px, 400, 1.2em, $mainColor);
+  }
+  .description {
+    @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+  }
+  .hover {
+    color: $accentColor;
+  }
 }

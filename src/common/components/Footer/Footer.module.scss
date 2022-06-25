@@ -1,21 +1,20 @@
-.footerBlock{
-    background-color: seagreen;
+.footerBlock {
 }
 
-.footerContainer{
-    flex-direction: column;
-    align-items: center;
+.footerContainer {
+  flex-direction: column;
+  align-items: center;
 }
 
-.socialBlock{
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
-    min-width: 280px;
-    background-color: lightgreen;
+.socialBlock {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  min-width: 280px;
+  background-color: lightgreen;
 }
-.socialItem{
-    height: 40px;
-    width: 40px;
-    background-color: deepskyblue;
+.socialItem {
+  height: 40px;
+  width: 40px;
+  background-color: deepskyblue;
 }

@@ -4,16 +4,17 @@ import Footer from '../common/components/Footer/Footer';
 import Header from '../common/components/Header/Header';
 import Contacts from '../pages/Contacts/Contacts';
 import Main from '../pages/Main/Main';
-import Portfolio from '../pages/Portfolio/Portfolio';
+import Projects from '../pages/Projects/Projects';
 import Skills from '../pages/Skills/Skills';
-import './App.scss';
+
+import s from './App.module.scss';
 
 const App: FC = () => (
-  <div className="App">
+  <div className={s.App}>
     <Header />
     <Main />
     <Skills />
-    <Portfolio />
+    <Projects />
     <Contacts />
     <Footer />
   </div>

@@ -1,0 +1,6 @@
+@import '../common/styles/sass/variables.scss';
+.App {
+  section:nth-child(even) {
+    background-color: $secondaryBg;
+  }
+}
