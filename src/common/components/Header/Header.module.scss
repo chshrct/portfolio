@@ -1,5 +1,5 @@
-@import "../../styles/sass/variables.scss";
-@import "../../styles/sass/mixins.scss";
+@import '../../styles/sass/variables.scss';
+@import '../../styles/sass/mixins.scss';
 .header {
   position: fixed;
   z-index: 2;
@@ -16,12 +16,13 @@
         display: flex;
       }
       .phoneContainer {
-        display: flex;
-        align-items: center;
         padding-left: 45px;
         .phoneNumber {
+          display: flex;
+          align-items: center;
+          gap: 15px;
           @include fontInterSettings(16px, 400, 1.6em, $accentColor);
-          padding-left: 15px;
+          text-decoration: none;
         }
       }
     }

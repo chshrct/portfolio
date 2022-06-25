@@ -13,8 +13,10 @@ const Header: FC = () => {
         <div className={s.navContainer}>
           <Nav />
           <div className={s.phoneContainer}>
-            <Phone width={15} height={15} title="phone" />
-            <div className={s.phoneNumber}>+995 595126653</div>
+            <a className={s.phoneNumber} href="tel:+995 595126653">
+              <Phone width={15} height={15} title="phone" />
+              +995 595126653
+            </a>
           </div>
         </div>
       </div>
