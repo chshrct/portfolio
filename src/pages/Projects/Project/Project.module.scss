@@ -1,27 +1,81 @@
+@import '../../../common/styles/sass/mixins.scss';
+@import '../../../common/styles/sass/variables.scss';
 .projectBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 280px;
-  background-color: tan;
-}
-.preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 280px;
-  height: 280px;
-  background-color: skyblue;
-}
+  background-position: center;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  width: 350px;
+  height: 284px;
+  &:hover {
+    background-size: 130%;
+  }
+  .link {
+    .icon {
+      position: absolute;
+      right: 20px;
+      bottom: 13px;
+      z-index: 3;
+      svg {
+        color: $accentColor;
+      }
+    }
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    &:hover {
+      opacity: 1;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #3f4551;
+      z-index: 1;
+      opacity: 0.8;
+    }
 
-.descriptionBlock {
-  width: 90%;
-}
-
-.title {
-  background-color: skyblue;
-}
-
-.description {
-  background-color: rosybrown;
+    &::after {
+      content: '';
+      position: absolute;
+      border: 1px solid #fdfeff;
+      width: 90%;
+      height: 90%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    h5 {
+      position: absolute;
+      width: 350px;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      @include fontInterSettings(20px, 500, 1.2em, $mainColor);
+      z-index: 2;
+      text-align: center;
+    }
+    p {
+      position: absolute;
+      width: 250px;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      z-index: 2;
+      @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+    }
+  }
 }

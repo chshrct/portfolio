@@ -1,9 +1,11 @@
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import s from './Skill.module.scss';
+
+import { useHover } from 'hooks/useHover/useHover';
 
 type PropsType = {
   icon: IconDefinition;
@@ -12,21 +14,10 @@ type PropsType = {
 };
 
 const Skill: FC<PropsType> = ({ title, description, icon }) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-
-  const onSkillMouseEnter = (): void => {
-    setIsHovered(true);
-  };
-  const onSkillMouseLeave = (): void => {
-    setIsHovered(false);
-  };
+  const { isHovered, onMouseEnter, onMouseLeave } = useHover();
 
   return (
-    <div
-      className={s.skill}
-      onMouseEnter={onSkillMouseEnter}
-      onMouseLeave={onSkillMouseLeave}
-    >
+    <div className={s.skill} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <FontAwesomeIcon
         icon={icon}
         size="4x"
