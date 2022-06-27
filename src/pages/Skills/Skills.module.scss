@@ -1,17 +1,16 @@
 @import '../../common/styles/sass/variables.scss';
 
 .skillsBlock {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   .skillsContainer {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    .title {
-      background-color: darkturquoise;
-    }
+
     .skills {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 29px;
       flex-wrap: wrap;
       width: 100%;
     }

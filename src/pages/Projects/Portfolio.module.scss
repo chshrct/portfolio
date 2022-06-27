@@ -1,5 +1,5 @@
 .portfolioBlock {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 }
 .portfolioContainer {
   flex-direction: column;
@@ -8,7 +8,8 @@
 
 .projects {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
   flex-wrap: wrap;
   border: 1px solid;
   width: 100%;
