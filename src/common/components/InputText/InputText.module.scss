@@ -1,0 +1,70 @@
+@import '../../styles/sass/mixins.scss';
+@import '../../styles/sass/variables.scss';
+.tooltip {
+  position: relative;
+  width: 100%;
+  .input {
+    display: block;
+    width: 100%;
+    color: #a9adb8;
+    padding: 12px 20px;
+    border: 1px solid #232935;
+    background-color: #101624;
+    height: 52px;
+    border-radius: 7px;
+    transition: all 0.4s ease;
+    outline: none;
+    margin: 0;
+    @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+    &:focus {
+      border-color: $accentColor;
+    }
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+  .error {
+    border-color: rgb(119, 54, 54);
+  }
+  .error:focus {
+    border-color: rgb(119, 54, 54);
+  }
+  .tooltiptext {
+    visibility: hidden;
+    max-width: 400px;
+    background-color: rgb(119, 54, 54);
+    color: $secondaryColor;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  /* Tooltip arrow */
+  .tooltiptext::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  &:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+}

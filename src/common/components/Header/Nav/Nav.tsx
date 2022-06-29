@@ -1,4 +1,4 @@
-import React, { FC, useId } from 'react';
+import { FC } from 'react';
 
 import { Link } from 'react-scroll';
 
@@ -6,12 +6,16 @@ import s from './Nav.module.scss';
 
 const NAV_LINKS = ['HOME', 'SKILLS', 'PROJECTS', 'CONTACTS'];
 
-const Nav: FC = () => {
+type PropsType = {
+  isBurgerActive: boolean;
+};
+
+const Nav: FC<PropsType> = ({ isBurgerActive }) => {
   return (
-    <div className={s.nav}>
+    <div className={isBurgerActive ? `${s.nav} ${s.act}` : s.nav}>
       <ul>
         {NAV_LINKS.map(link => (
-          <li key={useId()}>
+          <li key={Math.random()}>
             <Link activeClass={s.active} to={link} spy smooth offset={-75} duration={500}>
               {link}
             </Link>

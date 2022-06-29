@@ -1,4 +1,4 @@
-import { FC, useId } from 'react';
+import { FC } from 'react';
 
 import cs from '../../common/styles/Container.module.scss';
 
@@ -18,7 +18,7 @@ const Skills: FC = () => {
         <div className={s.skills}>
           {SKILLS_DATA.map(skill => (
             <Skill
-              key={useId()}
+              key={skill.id}
               icon={skill.icon}
               title={skill.title}
               description={skill.description}

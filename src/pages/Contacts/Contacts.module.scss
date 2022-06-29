@@ -1,20 +1,73 @@
+@import '../../common/styles/sass/mixins.scss';
+@import '../../common/styles/sass/variables.scss';
 .contactsBlock {
-}
-.contactsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  min-height: calc(100vh - 80px - 67px);
+  .contactsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contactsWrapper {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      width: 100%;
+      h3 {
+        @include fontInterSettings(30px, 400, 1.2em, $mainColor);
+        padding: 0;
+        margin: 0 0 10px 0;
+      }
+      .formWrapper {
+        max-width: 50%;
+        flex: 0 0 50%;
+        padding: 0 15px;
+        margin-bottom: 30px;
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.input {
-  width: 100%;
-}
-.textarea {
-  width: 100%;
+        @media screen and (max-width: 992px) {
+          max-width: 100%;
+          flex: 0 0 100%;
+        }
+
+        .form {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 30px;
+          margin-top: 30px;
+        }
+      }
+
+      .contactInfo {
+        min-width: 375px;
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        flex: 0 0 50%;
+        padding: 0 15px;
+        @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+        .contantInfoWrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+          a {
+            text-decoration: none;
+            @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+
+            &:hover {
+              color: $accentColor;
+              border-color: $accentColor;
+            }
+          }
+          p {
+            @include fontInterSettings(20px, 500, 1.6em, $secondaryColor);
+            margin: 0;
+          }
+          .iconLinksWrapper {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
 }

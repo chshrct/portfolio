@@ -8,9 +8,10 @@ import s from './SocialLink.module.scss';
 type PropsType = {
   active: boolean;
   icon: IconDefinition;
-  setActiveHandle: (title: string) => void;
-  title: string;
-  url: string;
+  setActiveHandle?: (title: string) => void;
+  title?: string;
+  url?: string;
+  style?: any;
 };
 
 export const SocialLink: FC<PropsType> = ({
@@ -19,9 +20,10 @@ export const SocialLink: FC<PropsType> = ({
   icon,
   url,
   setActiveHandle,
+  style,
 }) => {
   const onMouseEnter = (): void => {
-    setActiveHandle(title);
+    if (setActiveHandle && title) setActiveHandle(title);
   };
   return (
     <a
@@ -30,6 +32,7 @@ export const SocialLink: FC<PropsType> = ({
       onMouseEnter={onMouseEnter}
       target="_blank"
       rel="noreferrer"
+      style={style}
     >
       <FontAwesomeIcon icon={icon} size="2x" />
       {title}

@@ -5,6 +5,20 @@
   position: relative;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 1200px) {
+    position: fixed;
+    top: 80px;
+    right: 0px;
+    background-color: $secondaryBg;
+    overflow: hidden;
+    padding: 0px 30px;
+    max-height: 0;
+    transition-property: max-height, padding;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+    transition-delay: 0.2s;
+    border-radius: 0 0 8px 8px;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -12,6 +26,9 @@
     width: 1px;
     background: $mainColor;
     right: 0px;
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
   }
   ul {
     display: flex;
@@ -19,6 +36,10 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+      gap: 20px;
+    }
     li {
       margin-right: 40px;
       &:last-child {
@@ -35,4 +56,8 @@
       }
     }
   }
+}
+.act {
+  max-height: 223px;
+  padding: 30px;
 }

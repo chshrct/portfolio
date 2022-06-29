@@ -32,15 +32,17 @@ const Project: FC<PropsType> = ({
         <h5>{title}</h5>
         <p>{description}</p>
         {deployLink && (
-          <a href={gitLink} target="_blank" rel="noreferrer" className={s.icon}>
-            <FontAwesomeIcon
-              icon={faGitAlt}
-              size="3x"
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              shake={isHovered}
-            />
-          </a>
+          <object>
+            <a href={gitLink} target="_blank" rel="noreferrer" className={s.icon}>
+              <FontAwesomeIcon
+                icon={faGitAlt}
+                size="3x"
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                shake={isHovered}
+              />
+            </a>
+          </object>
         )}
       </a>
     </div>

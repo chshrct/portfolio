@@ -16,6 +16,12 @@
       h1 {
         margin: 0 0 24px 0;
         @include fontInterSettings(120px, 700, 1, $mainColor);
+        @media screen and(max-width:768px) {
+          font-size: 90px;
+        }
+        @media screen and(max-width:450px) {
+          font-size: 70px;
+        }
       }
       h2 {
         margin: 0 0 41px 0;
@@ -34,5 +40,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
   }
 }

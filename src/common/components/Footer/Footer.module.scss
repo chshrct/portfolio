@@ -1,20 +1,14 @@
+@import '../../styles/sass/variables.scss';
+@import '../../styles/sass/mixins.scss';
 .footerBlock {
-}
-
-.footerContainer {
-  flex-direction: column;
-  align-items: center;
-}
-
-.socialBlock {
-  display: flex;
-  justify-content: space-between;
-  height: 40px;
-  min-width: 280px;
-  background-color: lightgreen;
-}
-.socialItem {
-  height: 40px;
-  width: 40px;
-  background-color: deepskyblue;
+  height: 72px;
+  .footerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    p {
+      @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+    }
+  }
 }

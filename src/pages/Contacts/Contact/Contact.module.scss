@@ -1,0 +1,21 @@
+@import '../../../common/styles/sass/mixins.scss';
+@import '../../../common/styles/sass/variables.scss';
+.container {
+  display: flex;
+  align-items: flex-start;
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h4 {
+      @include fontInterSettings(20px, 400, 1.2em, $mainColor);
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+    .descriptionText {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

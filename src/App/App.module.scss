@@ -4,3 +4,26 @@
     background-color: $secondaryBg;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(169, 173, 184, 0.9);
+  border-radius: 5px;
+  &:hover {
+    background-color: rgba(169, 173, 184, 1);
+  }
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+::-webkit-resizer {
+  background-color: rgba(169, 173, 184, 1);
+  border: none;
+  border-radius: 150% 0 7px 0;
+  outline: none;
+}
