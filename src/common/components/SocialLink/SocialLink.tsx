@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC, TouchEventHandler } from 'react';
 
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,11 +25,18 @@ export const SocialLink: FC<PropsType> = ({
   const onMouseEnter = (): void => {
     if (setActiveHandle && title) setActiveHandle(title);
   };
+  const onTouchEnd: TouchEventHandler<HTMLAnchorElement> = e => {
+    e.preventDefault();
+    if (!active && setActiveHandle && title) setActiveHandle(title);
+
+    if (active) e.currentTarget.click();
+  };
   return (
     <a
       href={url}
       className={active ? `${s.link} ${s.active}` : s.link}
       onMouseEnter={onMouseEnter}
+      onTouchEnd={onTouchEnd}
       target="_blank"
       rel="noreferrer"
       style={style}

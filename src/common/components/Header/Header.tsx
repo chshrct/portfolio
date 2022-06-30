@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-scroll';
 
 import signature from '../../../assets/images/signature.png';
 import cs from '../../styles/Container.module.scss';
@@ -17,7 +18,18 @@ const Header: FC = () => {
   return (
     <div className={s.header}>
       <div className={`${cs.container} ${s.headerContainer}`}>
-        <img src={signature} alt="signature" className={s.signature} />
+        <Link
+          activeClass={s.active}
+          to="HOME"
+          spy
+          smooth
+          offset={-80}
+          duration={500}
+          className={s.logo}
+        >
+          <img src={signature} alt="signature" />
+        </Link>
+
         <div className={s.navContainer}>
           <Nav isBurgerActive={isBurgerActive} />
           <div

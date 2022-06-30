@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import cs from '../../common/styles/Container.module.scss';
 
@@ -9,6 +9,10 @@ import { PROJECTS_DATA } from 'App/state';
 import { SectionHeading } from 'common/components/SectionHeading/SectionHeading';
 
 const Projects: FC = () => {
+  const [activeProject, setActiveProject] = useState<string>('');
+  const setActiveHandle = (title: string): void => {
+    setActiveProject(title);
+  };
   return (
     <section id="PROJECTS" className={s.projectsBlock}>
       <div className={`${cs.container} ${s.projectsContainer}`}>
@@ -24,6 +28,8 @@ const Projects: FC = () => {
               gitLink={proj.gitLink}
               deployLink={proj.deployLink}
               title={proj.title}
+              active={proj.title === activeProject}
+              setActiveHandle={setActiveHandle}
             />
           ))}
         </div>

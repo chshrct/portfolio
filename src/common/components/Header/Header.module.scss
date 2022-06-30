@@ -11,10 +11,12 @@
     height: 100%;
     justify-content: flex-end;
     align-items: center;
-    .signature {
+    .logo {
+      cursor: pointer;
       position: absolute;
-      left: 0px;
+      left: 30px;
     }
+
     .navContainer {
       @media screen and (min-width: 1200px) {
         display: flex;

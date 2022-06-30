@@ -9,7 +9,7 @@ import cs from '../../common/styles/Container.module.scss';
 import { Contact } from './Contact/Contact';
 import s from './Contacts.module.scss';
 
-import { CONTACTS_DATA, FOOTER_DATA } from 'App/state';
+import { CONTACTS_DATA, FOOTER_DATA as SECONDARY_SOCIAL_DATA } from 'App/state';
 import { AccentButton } from 'common/components/AccentButton/AccentButton';
 import { InputText } from 'common/components/InputText/InputText';
 import { SectionHeading } from 'common/components/SectionHeading/SectionHeading';
@@ -54,7 +54,9 @@ const Contacts: FC = () => {
   const [isEmailSent, setIsEmailSent] = useState<boolean>(false);
   const [doesEmailInfoShows, setDoesEmailInfoShows] = useState<boolean>(false);
 
-  const [activeContact, setActiveContact] = useState<string>(FOOTER_DATA[FIRST].title);
+  const [activeContact, setActiveContact] = useState<string>(
+    SECONDARY_SOCIAL_DATA[FIRST].title,
+  );
 
   const setActiveHandle = (title: string): void => {
     setActiveContact(title);
@@ -116,7 +118,7 @@ const Contacts: FC = () => {
         <div className={s.contactsWrapper}>
           <div className={s.formWrapper}>
             <h3>Just say Hello</h3>
-            <form className={s.form} onSubmit={onFormSubmit}>
+            <form className={s.form} onSubmit={onFormSubmit} autoComplete="new-password">
               <InputText
                 name="name"
                 placeholder="Your Name"
@@ -124,6 +126,7 @@ const Contacts: FC = () => {
                 onChange={onNameChange}
                 error={isNameTouched ? nameError : undefined}
                 onBlur={onNameBlur}
+                autoComplete="off"
               />
               <InputText
                 name="email"
@@ -132,6 +135,7 @@ const Contacts: FC = () => {
                 onChange={onEmailChange}
                 error={isEmailTouched ? emailError : undefined}
                 onBlur={onEmailBlur}
+                autoComplete="off"
               />
               <InputText
                 name="subject"
@@ -140,6 +144,7 @@ const Contacts: FC = () => {
                 onChange={onSubjectChange}
                 error={isSubjectTouched ? subjectError : undefined}
                 onBlur={onSubjectBlur}
+                autoComplete="off"
               />
               <Textarea
                 name="text"
@@ -191,7 +196,7 @@ const Contacts: FC = () => {
               ))}
               <p>Visite my social profile and get connected</p>
               <div className={s.iconLinksWrapper}>
-                {FOOTER_DATA.map(link => (
+                {SECONDARY_SOCIAL_DATA.map(link => (
                   <SocialLink
                     key={link.id}
                     title={link.title}
