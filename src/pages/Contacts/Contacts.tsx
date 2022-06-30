@@ -1,5 +1,7 @@
-import { FC, FormEvent, useState } from 'react';
+import { FC, FormEvent, useEffect, useState } from 'react';
 
+import { faThumbsUp, faSadTear } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 
 import cs from '../../common/styles/Container.module.scss';
@@ -34,6 +36,7 @@ type ContactFormType = HTMLFormElement & {
 const SUBJECT_LENGTH = 20;
 const TEXT_LENGTH = 560;
 const FIRST = 0;
+const ONE_SECOND = 5000;
 
 const Contacts: FC = () => {
   const [email, onEmailChange, emailError, isEmailTouched, onEmailBlur] =
@@ -46,10 +49,15 @@ const Contacts: FC = () => {
     validateLength(TEXT_LENGTH),
   );
 
-  const [active, setActive] = useState<string>(FOOTER_DATA[FIRST].title);
+  const [isFormSending, setIsFormSending] = useState<boolean>(false);
+
+  const [isEmailSent, setIsEmailSent] = useState<boolean>(false);
+  const [doesEmailInfoShows, setDoesEmailInfoShows] = useState<boolean>(false);
+
+  const [activeContact, setActiveContact] = useState<string>(FOOTER_DATA[FIRST].title);
 
   const setActiveHandle = (title: string): void => {
-    setActive(title);
+    setActiveContact(title);
   };
 
   const isSendDisabled =
@@ -60,9 +68,11 @@ const Contacts: FC = () => {
     !isEmailTouched ||
     !isNameTouched ||
     !isSubjectTouched ||
-    !isTextTouched;
+    !isTextTouched ||
+    isFormSending;
 
   const onFormSubmit = (e: FormEvent<ContactFormType>): void => {
+    setIsFormSending(true);
     e.preventDefault();
     const {
       name: nameEl,
@@ -70,13 +80,33 @@ const Contacts: FC = () => {
       subject: subjectEL,
       text: textEl,
     } = e.currentTarget.elements;
-    axios.post(`${process.env.REACT_APP_SMTP_SERVER_URL}send-email`, {
-      name: nameEl.value,
-      email: emailEl.value,
-      subject: subjectEL.value,
-      text: textEl.value,
-    });
+    axios
+      .post(`${process.env.REACT_APP_SMTP_SERVER_URL}send-email`, {
+        name: nameEl.value,
+        email: emailEl.value,
+        subject: subjectEL.value,
+        text: textEl.value,
+      })
+      .then(() => {
+        setDoesEmailInfoShows(true);
+        setIsEmailSent(true);
+      })
+      .catch(() => {
+        setDoesEmailInfoShows(true);
+        setIsEmailSent(false);
+      })
+      .finally(() => setIsFormSending(false));
   };
+
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    if (doesEmailInfoShows)
+      timeoutId = setTimeout(() => {
+        setDoesEmailInfoShows(false);
+      }, ONE_SECOND);
+    return () => clearTimeout(timeoutId);
+  }, [doesEmailInfoShows]);
+
   return (
     <section id="CONTACTS" className={s.contactsBlock}>
       <div className={`${cs.container} ${s.contactsContainer}`}>
@@ -119,9 +149,27 @@ const Contacts: FC = () => {
                 error={isTextTouched ? textError : undefined}
                 onBlur={onTextBlur}
               />
-              <AccentButton type="submit" disabled={!!isSendDisabled}>
+              <AccentButton
+                type="submit"
+                disabled={!!isSendDisabled}
+                loading={isFormSending}
+              >
                 Send Message
               </AccentButton>
+              <div className={s.buttonWrapper}>
+                {doesEmailInfoShows &&
+                  (isEmailSent ? (
+                    <>
+                      <p>Email sent. Thank you!</p>
+                      <FontAwesomeIcon icon={faThumbsUp} size="3x" />
+                    </>
+                  ) : (
+                    <>
+                      <p>Something went wrong. Please, try again later.</p>
+                      <FontAwesomeIcon icon={faSadTear} size="3x" />
+                    </>
+                  ))}
+              </div>
             </form>
           </div>
 
@@ -149,7 +197,7 @@ const Contacts: FC = () => {
                     title={link.title}
                     icon={link.icon}
                     setActiveHandle={setActiveHandle}
-                    active={active === link.title}
+                    active={activeContact === link.title}
                     url={link.url}
                     style={link.style}
                   />

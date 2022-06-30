@@ -6,10 +6,10 @@
   .input {
     display: block;
     width: 100%;
-    color: #a9adb8;
+    color: $secondaryColor;
     padding: 12px 20px;
-    border: 1px solid #232935;
-    background-color: #101624;
+    border: 1px solid $borderColor;
+    background-color: $thirdyBg;
     height: 52px;
     border-radius: 7px;
     transition: all 0.4s ease;
@@ -22,7 +22,12 @@
     &::placeholder {
       opacity: 0.5;
     }
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
   }
+
   .error {
     border-color: rgb(119, 54, 54);
   }

@@ -5,7 +5,9 @@
 }
 
 .button {
-  display: inline-flex;
+  height: 48px;
+  overflow: hidden;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
@@ -22,5 +24,8 @@
   @include fontInterSettings(16px, 500, 1.5em, $secondaryBg);
   &:disabled {
     opacity: 0.5;
+  }
+  svg {
+    margin: 0 !important;
   }
 }

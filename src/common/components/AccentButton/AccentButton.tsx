@@ -6,9 +6,11 @@ import React, {
   useId,
 } from 'react';
 
+import { ReactComponent as ButtonLoader } from '../../../assets/loaders/button-loader.svg';
+
 import s from './AccentButton.module.scss';
 
-type IncomingPropsType = { label?: string; children?: ReactNode };
+type IncomingPropsType = { label?: string; children?: ReactNode; loading?: boolean };
 
 type PropsType = DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -16,7 +18,13 @@ type PropsType = DetailedHTMLProps<
 > &
   IncomingPropsType;
 
-export const AccentButton: FC<PropsType> = ({ type, label, disabled, children }) => {
+export const AccentButton: FC<PropsType> = ({
+  type,
+  label,
+  disabled,
+  children,
+  loading,
+}) => {
   const BUTTON_ID = useId();
 
   return (
@@ -28,7 +36,7 @@ export const AccentButton: FC<PropsType> = ({ type, label, disabled, children })
         name={BUTTON_ID}
         disabled={disabled}
       >
-        {children}
+        {loading ? <ButtonLoader height={50} width={50} /> : children}
       </button>
     </label>
   );

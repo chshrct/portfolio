@@ -16,7 +16,7 @@ const Nav: FC<PropsType> = ({ isBurgerActive }) => {
       <ul>
         {NAV_LINKS.map(link => (
           <li key={Math.random()}>
-            <Link activeClass={s.active} to={link} spy smooth offset={-75} duration={500}>
+            <Link activeClass={s.active} to={link} spy smooth offset={-80} duration={500}>
               {link}
             </Link>
           </li>

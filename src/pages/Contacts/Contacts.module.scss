@@ -34,6 +34,15 @@
           align-items: flex-start;
           gap: 30px;
           margin-top: 30px;
+          .buttonWrapper {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            color: $secondaryColor;
+            p {
+              @include fontInterSettings(20px, 500, 1.6em, $secondaryColor);
+            }
+          }
         }
       }
 
