@@ -8,7 +8,7 @@ const Footer: FC = () => {
   return (
     <div className={s.footerBlock}>
       <div className={`${cs.container} ${s.footerContainer}`}>
-        <p>© 2022. Made by Chshrct. All right reserved.</p>
+        <p>© 2022. Made by Chshrct.</p>
       </div>
     </div>
   );

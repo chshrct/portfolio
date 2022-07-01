@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +10,7 @@ import { useHover } from 'hooks/useHover/useHover';
 type PropsType = {
   icon: IconDefinition;
   title: string;
-  description: string;
+  description: ReactNode;
 };
 
 const Skill: FC<PropsType> = ({ title, description, icon }) => {
@@ -25,7 +25,7 @@ const Skill: FC<PropsType> = ({ title, description, icon }) => {
         beat={isHovered}
       />
       <h2 className={isHovered ? `${s.title} ${s.hover}` : s.title}>{title}</h2>
-      <p className={s.description}>{description}</p>
+      {description}
     </div>
   );
 };

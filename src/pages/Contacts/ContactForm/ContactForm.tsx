@@ -9,11 +9,7 @@ import s from './ContactForm.module.scss';
 import { AccentButton } from 'common/components/AccentButton/AccentButton';
 import { InputText } from 'common/components/InputText/InputText';
 import { Textarea } from 'common/components/Textarea/Textarea';
-import {
-  validateEmail,
-  validateLength,
-  validateName,
-} from 'helpers/validation/inputValidators';
+import { validateEmail, validateLength } from 'helpers/validation/inputValidators';
 import { useInputText } from 'hooks/useInputText/useInputText';
 
 type FormElements = HTMLFormControlsCollection & {
@@ -34,8 +30,9 @@ const ONE_SECOND = 5000;
 export const ContactForm: FC = () => {
   const [email, onEmailChange, emailError, isEmailTouched, onEmailBlur] =
     useInputText(validateEmail);
-  const [name, onNameChange, nameError, isNameTouched, onNameBlur] =
-    useInputText(validateName);
+  const [name, onNameChange, nameError, isNameTouched, onNameBlur] = useInputText(
+    validateLength(TEXT_LENGTH),
+  );
   const [subject, onSubjectChange, subjectError, isSubjectTouched, onSubjectBlur] =
     useInputText(validateLength(SUBJECT_LENGTH));
   const [text, onTextChange, textError, isTextTouched, onTextBlur] = useInputText(
@@ -132,19 +129,20 @@ export const ContactForm: FC = () => {
           error={isTextTouched ? textError : undefined}
           onBlur={onTextBlur}
         />
-        <AccentButton type="submit" disabled={!!isSendDisabled} loading={isFormSending}>
-          Send Message
-        </AccentButton>
+
         <div className={s.buttonWrapper}>
+          <AccentButton type="submit" disabled={!!isSendDisabled} loading={isFormSending}>
+            Send Message
+          </AccentButton>
           {doesEmailInfoShows &&
             (isEmailSent ? (
               <>
-                <p>Email sent. Thank you!</p>
+                <span>Email sent!</span>
                 <FontAwesomeIcon icon={faThumbsUp} size="3x" />
               </>
             ) : (
               <>
-                <p>Something went wrong. Please, try again later.</p>
+                <span>Error. Sry!</span>
                 <FontAwesomeIcon icon={faSadTear} size="3x" />
               </>
             ))}

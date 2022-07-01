@@ -4,12 +4,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 30px;
+  padding: 30px 30px;
   border-radius: 3px;
   transition: all 0.4s ease;
   border: 1px solid $borderColor;
   background-color: $thirdyBg;
   width: 350px;
+  p {
+    @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+    a {
+      text-decoration: none;
+      color: $accentColor;
+    }
+  }
+  a {
+    display: inline;
+  }
   svg {
     margin-bottom: 28px;
     color: $secondaryColor;
@@ -20,9 +30,7 @@
     margin: 0 0 16px 0;
     @include fontInterSettings(20px, 400, 1.2em, $mainColor);
   }
-  .description {
-    @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
-  }
+
   .hover {
     color: $accentColor;
   }
