@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 
 import { Link } from 'react-scroll';
 
@@ -8,12 +8,27 @@ const NAV_LINKS = ['HOME', 'SKILLS', 'PROJECTS', 'CONTACTS'];
 
 type PropsType = {
   isBurgerActive: boolean;
+  setIsBurgerActive(isActive: boolean): void;
 };
 
-const Nav: FC<PropsType> = ({ isBurgerActive }) => {
+const Nav: FC<PropsType> = ({ isBurgerActive, setIsBurgerActive }) => {
+  const onOutSideNavClick: MouseEventHandler<HTMLDivElement> = () =>
+    setIsBurgerActive(false);
   return (
-    <div className={isBurgerActive ? `${s.nav} ${s.act}` : s.nav}>
-      <ul>
+    <div
+      role="button"
+      tabIndex={0}
+      aria-hidden="true"
+      className={isBurgerActive ? `${s.nav} ${s.activeNav}` : s.nav}
+      onClick={onOutSideNavClick}
+    >
+      <ul
+        aria-hidden="true"
+        className={isBurgerActive ? `${s.ul} ${s.activeUl}` : s.ul}
+        onClick={e => {
+          e.stopPropagation();
+        }}
+      >
         {NAV_LINKS.map(link => (
           <li key={Math.random()}>
             <Link activeClass={s.active} to={link} spy smooth offset={-80} duration={500}>

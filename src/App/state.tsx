@@ -69,21 +69,21 @@ export const SKILLS_DATA = [
   {
     id: 4,
     icon: faNetworkWired,
-    title: 'HTTP/REST API',
+    title: 'HTTP+REST API',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, molestias?',
   },
   {
     id: 5,
     icon: faFlaskVial,
-    title: 'JEST/TDD',
+    title: 'JEST+TDD',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, molestias?',
   },
   {
     id: 6,
     icon: faGithub,
-    title: 'Git/Github',
+    title: 'Git+Github',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, molestias?',
   },
@@ -93,7 +93,8 @@ export const PROJECTS_DATA = [
   {
     id: 1,
     title: 'Learning Cards',
-    description: 'some text here',
+    description:
+      'SPA for creating packs of training cards and learning from them. An educational team project created by a team of 4 people. Stack: React, redux/thunk, router, REST, etc.',
     backgroundImage: learningBg,
     gitLink: 'https://github.com/chshrct/cards',
     deployLink: 'https://chshrct.github.io/cards/',
@@ -101,7 +102,8 @@ export const PROJECTS_DATA = [
   {
     id: 2,
     title: 'Todolist',
-    description: 'some text here',
+    description:
+      'SPA todolist. A training project that implements a full BLL/DALL/UI workflow based on TDD(unit and snapshot tests). Stack: React, redux-toolkit/thunk, router, REST, JEST, MaterialUI, storybook, etc.',
     backgroundImage: todolistBg,
     gitLink: 'https://github.com/chshrct/todolist',
     deployLink: 'https://chshrct-todolist.herokuapp.com/',
@@ -109,7 +111,8 @@ export const PROJECTS_DATA = [
   {
     id: 3,
     title: 'Social Network',
-    description: 'some text here',
+    description:
+      'SPA social network. A training project that uses both a functional and a class approach in React for practice. Stack: React, redux-toolkit/thunk, router, REST, axios, formik, etc.',
     backgroundImage: socialBg,
     gitLink: 'https://github.com/chshrct/social-network',
   },

@@ -34,9 +34,10 @@ const Project: FC<PropsType> = ({
     setActiveHandle('');
   };
   const onTouchEnd: TouchEventHandler<HTMLDivElement | HTMLAnchorElement> = e => {
-    e.preventDefault();
-    if (!active) setActiveHandle(title);
-    if (active) e.currentTarget.click();
+    if (!active) {
+      e.preventDefault();
+      setActiveHandle(title);
+    }
   };
   return (
     <div

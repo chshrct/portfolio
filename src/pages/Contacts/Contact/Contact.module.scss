@@ -3,6 +3,12 @@
 .container {
   display: flex;
   align-items: flex-start;
+  &:hover a {
+    border-color: $accentColor;
+  }
+  svg {
+    color: $secondaryColor;
+  }
   .description {
     display: flex;
     flex-direction: column;
@@ -11,6 +17,14 @@
       @include fontInterSettings(20px, 400, 1.2em, $mainColor);
       padding: 0;
       margin: 0 0 10px 0;
+    }
+    a {
+      text-decoration: none;
+      @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+
+      &:hover {
+        color: $accentColor;
+      }
     }
     .descriptionText {
       display: flex;

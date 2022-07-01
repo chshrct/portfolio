@@ -15,12 +15,12 @@
   padding: 9px;
   height: 52px;
   max-width: 50px;
-  transition: all 0.4s;
+  transition: all 0.3s linear;
+  transition-delay: 0s;
   svg {
     align-self: center;
   }
   &.active {
-    max-width: 500px;
-    transition-delay: 0s;
+    max-width: 132px;
   }
 }

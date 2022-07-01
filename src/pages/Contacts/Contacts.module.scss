@@ -17,35 +17,6 @@
         padding: 0;
         margin: 0 0 10px 0;
       }
-      .formWrapper {
-        max-width: 50%;
-        flex: 0 0 50%;
-        padding: 0 15px;
-        margin-bottom: 30px;
-
-        @media screen and (max-width: 992px) {
-          max-width: 100%;
-          flex: 0 0 100%;
-        }
-
-        .form {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 30px;
-          margin-top: 30px;
-          .buttonWrapper {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            color: $secondaryColor;
-            p {
-              @include fontInterSettings(20px, 500, 1.6em, $secondaryColor);
-            }
-          }
-        }
-      }
-
       .contactInfo {
         min-width: 375px;
         display: flex;
@@ -59,21 +30,15 @@
           flex-direction: column;
           align-items: flex-start;
           gap: 20px;
-          a {
-            text-decoration: none;
-            @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
-
-            &:hover {
-              color: $accentColor;
-              border-color: $accentColor;
-            }
-          }
           p {
             @include fontInterSettings(20px, 500, 1.6em, $secondaryColor);
             margin: 0;
           }
           .iconLinksWrapper {
             display: flex;
+            svg {
+              color: $secondaryColor;
+            }
           }
         }
       }

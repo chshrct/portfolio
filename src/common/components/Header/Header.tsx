@@ -31,7 +31,7 @@ const Header: FC = () => {
         </Link>
 
         <div className={s.navContainer}>
-          <Nav isBurgerActive={isBurgerActive} />
+          <Nav isBurgerActive={isBurgerActive} setIsBurgerActive={setIsBurgerActive} />
           <div
             className={s.phoneContainer}
             onMouseEnter={onMouseEnter}
