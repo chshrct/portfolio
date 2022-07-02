@@ -4,7 +4,7 @@ import { Link } from 'react-scroll';
 
 import s from './Nav.module.scss';
 
-const NAV_LINKS = ['HOME', 'SKILLS', 'PROJECTS', 'CONTACTS'];
+const NAV_LINKS = ['HOME', 'RESUME', 'SKILLS', 'PROJECTS', 'CONTACTS'];
 
 type PropsType = {
   isBurgerActive: boolean;

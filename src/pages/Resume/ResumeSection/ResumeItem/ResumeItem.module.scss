@@ -1,0 +1,43 @@
+@import '../../../../common/styles/sass/mixins.scss';
+@import '../../../../common/styles/sass/variables.scss';
+
+.resumeItemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 40px;
+  position: relative;
+  h3 {
+    padding: 0;
+    margin: -7px 0 10px 0;
+    @include fontInterSettings(24px, 400, 1.2em, $accentColor);
+  }
+  div {
+    @include fontInterSettings(18px, 400, 1.6em, $secondaryColor);
+    margin-bottom: 21px;
+  }
+  h4 {
+    @include fontInterSettings(20px, 400, 1.2em, $mainColor);
+    padding: 0;
+    margin: 0 0 19px 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    border: 2px solid #232935;
+    border-radius: 50%;
+    background-color: #101624;
+    width: 13px;
+    height: 13px;
+    top: 0px;
+    left: -7px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  &:hover::before {
+    background-color: $accentColor;
+  }
+}

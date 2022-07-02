@@ -31,10 +31,7 @@ const Contacts: FC = () => {
           <ContactForm />
           <div className={s.contactInfo}>
             <h3>Contact Info</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla
-              tincidunt id faucibus sed suscipit feugiat.
-            </p>
+            <p>I am open to any offers and always in touch, use the contacts below:</p>
             <div className={s.contantInfoWrapper}>
               {CONTACTS_DATA.map(contact => (
                 <Contact

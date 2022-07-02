@@ -2,6 +2,7 @@
 @import '../../styles/sass/variables.scss';
 
 .container {
+  user-select: none;
   text-align: center;
   position: relative;
   margin-top: -5px;

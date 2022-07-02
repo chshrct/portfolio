@@ -10,6 +10,7 @@
   border: 1px solid $borderColor;
   background-color: $thirdyBg;
   width: 350px;
+  user-select: none;
   p {
     @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
     a {

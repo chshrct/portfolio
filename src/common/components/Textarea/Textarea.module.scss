@@ -16,8 +16,8 @@
     transition: all 0.4s ease;
     outline: none;
     margin: 0;
-    height: 140px;
-    resize: vertical;
+    height: 200px;
+    resize: none;
     overflow: auto;
     @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
     &:focus {

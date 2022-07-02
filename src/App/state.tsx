@@ -44,6 +44,62 @@ export const SOCIAL_DATA = [
   },
 ];
 
+export const RESUME_DATA = {
+  expirience: [
+    {
+      id: 1,
+      position: 'Professional Dota player/coach',
+      date: 'September 2013 - may 2022',
+      place: 'Winstrike',
+
+      description: (
+        <>
+          <p>
+            Since 2013 I had been a professional Dota 2 player in such teams as Power
+            Rangers, Gambit, Winstrike, Team Unique and others. In most teams, I acted as
+            captain. I also have a lot of experience as a coach.
+          </p>
+          <div style={{ height: '50px' }} />
+        </>
+      ),
+    },
+    {
+      id: 2,
+      position: 'Fullstack developer',
+      date: 'March 2013 - september 2013',
+      place: 'MIgroupMedia',
+      description: (
+        <p>I developed a landing page for an educational project from scratch.</p>
+      ),
+    },
+  ],
+  education: [
+    {
+      id: 1,
+      position: 'Trainee',
+      date: '2022',
+      place: 'IT-incubator',
+
+      description: (
+        <>
+          <p>
+            The training program included: TypeScript, React, Redux-Toolkit, React-Query,
+            Storybook, Unit Tests, REST API, WebSocket, HTML/CSS/JS knowledge development,
+            back-end basics
+          </p>
+          <div style={{ height: '50px' }} />
+        </>
+      ),
+    },
+    {
+      id: 2,
+      position: 'Electronic engineer-programmer',
+      date: '2008-2013',
+      place: 'Belarusian State University of Informatics and Radioelectronics',
+    },
+  ],
+};
+
 export const SKILLS_DATA = [
   {
     id: 1,

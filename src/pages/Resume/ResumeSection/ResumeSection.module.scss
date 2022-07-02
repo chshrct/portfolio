@@ -1,0 +1,27 @@
+@import '../../../common/styles/sass/mixins.scss';
+@import '../../../common/styles/sass/variables.scss';
+
+.resumeSectionContainer {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+  min-width: 350px;
+  margin-top: 50px;
+  .headingContainer {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    h2 {
+      @include fontInterSettings(36px, 400, 1.2em, $mainColor);
+      margin: 0;
+      margin-left: 30px;
+    }
+    svg {
+      color: $secondaryColor;
+    }
+  }
+  .items {
+    border-left: 1px solid $borderColor;
+  }
+}

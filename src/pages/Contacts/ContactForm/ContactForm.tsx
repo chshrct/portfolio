@@ -23,21 +23,24 @@ type ContactFormType = HTMLFormElement & {
   elements: FormElements;
 };
 
-const SUBJECT_LENGTH = 20;
 const TEXT_LENGTH = 560;
 const ONE_SECOND = 5000;
 
 export const ContactForm: FC = () => {
-  const [email, onEmailChange, emailError, isEmailTouched, onEmailBlur] =
+  const [email, setEmail, onEmailChange, emailError, isEmailTouched, onEmailBlur] =
     useInputText(validateEmail);
-  const [name, onNameChange, nameError, isNameTouched, onNameBlur] = useInputText(
-    validateLength(TEXT_LENGTH),
-  );
-  const [subject, onSubjectChange, subjectError, isSubjectTouched, onSubjectBlur] =
-    useInputText(validateLength(SUBJECT_LENGTH));
-  const [text, onTextChange, textError, isTextTouched, onTextBlur] = useInputText(
-    validateLength(TEXT_LENGTH),
-  );
+  const [name, setName, onNameChange, nameError, isNameTouched, onNameBlur] =
+    useInputText(validateLength(TEXT_LENGTH));
+  const [
+    subject,
+    setSubject,
+    onSubjectChange,
+    subjectError,
+    isSubjectTouched,
+    onSubjectBlur,
+  ] = useInputText(validateLength(TEXT_LENGTH));
+  const [text, setText, onTextChange, textError, isTextTouched, onTextBlur] =
+    useInputText(validateLength(TEXT_LENGTH));
   const [doesEmailInfoShows, setDoesEmailInfoShows] = useState<boolean>(false);
 
   const [isFormSending, setIsFormSending] = useState<boolean>(false);
@@ -72,6 +75,10 @@ export const ContactForm: FC = () => {
       .then(() => {
         setDoesEmailInfoShows(true);
         setIsEmailSent(true);
+        setEmail('');
+        setName('');
+        setSubject('');
+        setText('');
       })
       .catch(() => {
         setDoesEmailInfoShows(true);

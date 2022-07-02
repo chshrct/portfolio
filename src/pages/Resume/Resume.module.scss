@@ -1,0 +1,26 @@
+@import '../../common/styles/sass/mixins.scss';
+@import '../../common/styles/sass/variables.scss';
+.resumeBlock {
+  min-height: calc(100vh - 80px);
+  .resumeContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    .resume {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        @include fontInterSettings(16px, 400, 1.6em, $secondaryColor);
+      }
+      .sectionsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

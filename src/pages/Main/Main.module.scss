@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-between;
     .greeting {
+      user-select: none;
       width: 55%;
       h3 {
         margin: 0 0 10px 0;
@@ -33,13 +34,14 @@
     position: absolute;
     z-index: 1;
     right: 0;
-    bottom: 0;
-    height: 100%;
+    top: 80px;
+    height: calc(100% - 80px);
     width: 45%;
     background-image: url('../../assets/images/mainPhoto.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 5px;
     @media screen and (max-width: 1200px) {
       display: none;
     }

@@ -9,10 +9,13 @@ import Skills from '../pages/Skills/Skills';
 
 import s from './App.module.scss';
 
+import { Resume } from 'pages/Resume/Resume';
+
 const App: FC = () => (
   <div className={s.App}>
     <Header />
     <Main />
+    <Resume />
     <Skills />
     <Projects />
     <Contacts />

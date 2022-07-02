@@ -8,6 +8,7 @@ export const useInputText = (
   validator: (text: string) => string,
 ): [
   string,
+  (text: string) => void,
   ChangeEventHandler<ElementType>,
   string,
   boolean,
@@ -30,5 +31,5 @@ export const useInputText = (
       if (!validator(text)) setIsTouched(true);
     }
   };
-  return [value, onChange, error, isTouched, onBlur];
+  return [value, setValue, onChange, error, isTouched, onBlur];
 };
