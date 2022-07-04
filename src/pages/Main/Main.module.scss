@@ -10,7 +10,7 @@
     .greeting {
       user-select: none;
       width: 55%;
-      h3 {
+      .h3 {
         margin: 0 0 10px 0;
         @include fontInterSettings(30px, 300, 1.2em, $accentColor);
       }
