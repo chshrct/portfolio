@@ -26,6 +26,10 @@
   &:disabled {
     opacity: 0.5;
   }
+  &:hover {
+    box-shadow: 1px 1px 5px $accentColor;
+    transform: translateY(-1px);
+  }
   svg {
     margin: 0 !important;
   }

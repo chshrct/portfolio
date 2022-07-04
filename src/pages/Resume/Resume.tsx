@@ -16,7 +16,7 @@ const Fade = require('react-reveal/Fade');
 
 export const Resume: FC = () => {
   return (
-    <Fade>
+    <Fade fraction={0.05}>
       <section id="RESUME" className={s.resumeBlock}>
         <div className={`${cs.container} ${s.resumeContainer}`}>
           <div style={{ height: '50px' }} />

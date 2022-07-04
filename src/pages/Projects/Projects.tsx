@@ -17,7 +17,7 @@ const Projects: FC = () => {
   };
 
   return (
-    <Fade>
+    <Fade fraction={0.05}>
       <section id="PROJECTS" className={s.projectsBlock}>
         <div className={`${cs.container} ${s.projectsContainer}`}>
           <div style={{ height: '50px' }} />

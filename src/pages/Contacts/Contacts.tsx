@@ -24,7 +24,7 @@ const Contacts: FC = () => {
   };
 
   return (
-    <Fade>
+    <Fade fraction={0.05}>
       <section id="CONTACTS" className={s.contactsBlock}>
         <div className={`${cs.container} ${s.contactsContainer}`}>
           <div style={{ height: '50px' }} />
